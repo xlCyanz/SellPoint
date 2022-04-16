@@ -17,14 +17,16 @@ namespace Capa_de_presentacion
             InitializeComponent();
         }
 
-        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void DashboardScreen_Load(object sender, EventArgs e)
         {
             this.toolStripStatusLabel1.Text = DateTime.Today.ToString();
+        }
+
+        private void entidadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormEntidad formEntidad = new FormEntidad();
+            formEntidad.Show();
+            this.Hide();
         }
     }
 }

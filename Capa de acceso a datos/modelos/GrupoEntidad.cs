@@ -10,5 +10,13 @@ namespace Capa_de_acceso_a_datos.modelos
         public string Status { get; set; }
         public bool NoEliminable { get; set; }
         public DateTime FechaRegistro { get; set; }
+
+        public GrupoEntidad()
+        {
+            this.Status = "Activa";
+            this.NoEliminable = false;
+            this.FechaRegistro = DateTime.Now;
+        }
     }
+
 }

@@ -1,12 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Capa_de_acceso_a_datos.modelos
 {
-    internal class TipoEntidad
+    class TipoEntidad
     {
+        public int IdTipoEntidad { get; set; }
+        public string Descripcion { get; set; }
+        public string IdGrupoEntidad { get; set; }
+        public string Comentario { get; set; }
+        public string Status { get; set; }
+        public bool NoEliminable { get; set; }
+        public DateTime FechaRegistro { get; set; }
+
+        public TipoEntidad()
+        {
+            this.Status = "Activa";
+            this.NoEliminable = false;
+            this.FechaRegistro = DateTime.Now;
+        }
     }
 }

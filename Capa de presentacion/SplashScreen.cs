@@ -29,10 +29,9 @@ namespace Capa_de_presentacion
         void tmr_Tick(object sender, EventArgs e)
         {
             tmr.Stop();
-            LoginScreen mf = new LoginScreen();
-            mf.Show();
-            this.Hide();
-
+            LoginScreen login = new LoginScreen();
+            login.Show();
+            this.Close();
         }
     }
 }
