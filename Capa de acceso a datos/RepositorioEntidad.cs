@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace Capa_de_acceso_a_datos
@@ -62,10 +63,6 @@ namespace Capa_de_acceso_a_datos
 
         public void Actualizar(modelos.Entidad entidad)
         {
-            SqlCommand comando = new SqlCommand(@"insert into Entidades values (@descripcion, @direccion, @localidad, @tipoEntidad,
-            @tipoDocumento, @numeroDocumento, @telefono, @urlPaginaWeb, @urlFacebook, @urlInstagram, @urlTwitter, @urlTikTok, @idGrupoEntidad,
-            @idTipoEntidad, @limiteCredito, @userNameEntidad, @passwordEntidad, @rolUserEntidad, @comentario, @status, @noEliminable, @fechaRegistro)", conexion.AbrirConexion());
-
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "SpEntidadesActualizar";
             comando.CommandType = CommandType.StoredProcedure;
@@ -100,9 +97,9 @@ namespace Capa_de_acceso_a_datos
 
         public void Eliminar(int id)
         {
-            SqlCommand comando = new SqlCommand("Delete Entidades where IdEntidad = @id", conexion.AbrirConexion());
-
             comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "SpEntidadesEliminar";
+            comando.CommandType = CommandType.StoredProcedure;
 
             comando.Parameters.AddWithValue("@idEntidad", id);
 

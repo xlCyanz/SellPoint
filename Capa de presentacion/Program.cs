@@ -4,8 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using Capa_de_negocio;
-
 namespace Capa_de_presentacion
 {
     internal static class Program
@@ -18,9 +16,7 @@ namespace Capa_de_presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SplashScreen());
-
-            ServicioEntidad servicioEntidad = new ServicioEntidad();
+            Application.Run(new DashboardScreen());
         }
     }
 }

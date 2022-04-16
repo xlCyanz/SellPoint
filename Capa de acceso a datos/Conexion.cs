@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 
 namespace Capa_de_acceso_a_datos
 {
-    class Conexion
+    public class Conexion
     {
         private SqlConnection conn = new SqlConnection("Server=CYANZ-2772002\\MSSQLSERVERCUSTO;DataBase=sellpoint;Integrated Security=true");
         public SqlConnection AbrirConexion()

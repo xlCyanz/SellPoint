@@ -22,70 +22,27 @@ namespace Capa_de_negocio
             Entidad newEntidad = new Entidad();
 
             newEntidad.Descripcion = descripcion;
-            Console.WriteLine(descripcion);
-
             newEntidad.Direccion = direccion;
-            Console.WriteLine(direccion);
-
             newEntidad.Localidad = localidad;
-            Console.WriteLine(localidad);
-
             newEntidad.TipoEntidad = tipoEntidad;
-            Console.WriteLine(tipoEntidad);
-
             newEntidad.TipoDocumento = tipoDocumento;
-            Console.WriteLine(tipoDocumento);
-
             newEntidad.NumeroDocumento = numeroDocumento;
-            Console.WriteLine(numeroDocumento);
-
             newEntidad.Telefonos = telefono;
-            Console.WriteLine("Telefonos: {0}", telefono);
-
             newEntidad.URLPaginaWeb = urlWeb;
-            Console.WriteLine(urlWeb);
-
             newEntidad.URLFacebook = urlFacebook;
-            Console.WriteLine(urlFacebook);
-
             newEntidad.URLInstagram = urlInstagram;
-            Console.WriteLine(urlInstagram);
-
             newEntidad.URLTikTok = urlTiktok;
-            Console.WriteLine(urlTiktok);
-
             newEntidad.URLTwitter = urlTwitter;
-            Console.WriteLine(urlTwitter);
-
             newEntidad.IdGrupoEntidad = idGrupoEntidad;
-            Console.WriteLine(idGrupoEntidad);
-
             newEntidad.IdTipoEntidad = idTipoEntidad;
-            Console.WriteLine(idTipoEntidad);
-
             newEntidad.LimiteCredito = limiteCredito;
-            Console.WriteLine(limiteCredito);
-
             newEntidad.UserNameEntidad = userName;
-            Console.WriteLine(userName);
-
             newEntidad.PasswordEntidad = password;
-            Console.WriteLine(password);
-
             newEntidad.RolUserEntidad = rol;
-            Console.WriteLine(rol);
-
             newEntidad.Comentario = comentario;
-            Console.WriteLine(comentario);
-
             newEntidad.Status = status;
-            Console.WriteLine(status);
-
             newEntidad.NoEliminable = eliminable;
-            Console.WriteLine(eliminable);
-
             newEntidad.FechaRegistro = fecha;
-            Console.WriteLine(fecha);
 
             repositorio.Agregar(newEntidad);
         }

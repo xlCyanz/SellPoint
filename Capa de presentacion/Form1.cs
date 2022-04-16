@@ -25,8 +25,8 @@ namespace Capa_de_presentacion
         }
         private void MostrarEntidades()
         {
-            ServicioEntidad objeto = new ServicioEntidad();
-            dataGridView1.DataSource = objeto.Mostrar();
+            ServicioEntidad servicio = new ServicioEntidad();
+            dataGridView1.DataSource = servicio.Mostrar();
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
@@ -36,8 +36,8 @@ namespace Capa_de_presentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ServicioEntidad objeto = new ServicioEntidad();
-            objeto.Agregar("Buenas", "Manza", "Barrio", "232323", "23929323", 1, 2, "Johan", "johan27", "Hola", DateTime.Now);
+            ServicioEntidad servicio = new ServicioEntidad();
+            servicio.Agregar("Buenas", "Manza", "Barrio", "232323", "23929323", 1, 2, "Johan", "johan27", "Hola", DateTime.Now);
             MostrarEntidades();
         }
     }
