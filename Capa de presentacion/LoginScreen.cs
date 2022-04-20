@@ -21,11 +21,12 @@ namespace Capa_de_presentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-        }
+            string usernmame = textBox1.Text;
+            string password = textBox2.Text;
 
-        private void LoginScreen_Load(object sender, EventArgs e)
-        {
-
+            DashboardScreen screen = new DashboardScreen();
+            screen.Show();
+            this.Hide();
         }
     }
 }

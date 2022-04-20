@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 using Capa_de_negocio;
 
-namespace Capa_de_presentacion
+namespace Capa_de_presentacion.EntidadFormScreens
 {
     public partial class FormEntidad : Form
     {
@@ -39,7 +39,6 @@ namespace Capa_de_presentacion
             string value = dataGridView1[e.ColumnIndex, e.RowIndex].Value.ToString();
             string column = dataGridView1.Columns[e.ColumnIndex].Name;
             int idEntidad = Convert.ToInt32(dataGridView1[0, e.RowIndex].Value);
-
             Console.WriteLine(value);
             Console.WriteLine(column);
             Console.WriteLine(idEntidad);
@@ -52,13 +51,19 @@ namespace Capa_de_presentacion
             ServicioEntidad servicio = new ServicioEntidad();
             servicio.Eliminar(idEntidad);
             dataGridView1.Rows.RemoveAt(dataGridView1.CurrentCell.RowIndex);
-
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
             DashboardScreen dashboard = new DashboardScreen();
             dashboard.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AddEntity addEntity = new AddEntity();
+            addEntity.Show();
             this.Hide();
         }
     }

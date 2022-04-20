@@ -70,20 +70,20 @@
             // entidadesToolStripMenuItem
             // 
             this.entidadesToolStripMenuItem.Name = "entidadesToolStripMenuItem";
-            this.entidadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.entidadesToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.entidadesToolStripMenuItem.Text = "Entidades";
             this.entidadesToolStripMenuItem.Click += new System.EventHandler(this.entidadesToolStripMenuItem_Click);
             // 
             // gruposEntidadesToolStripMenuItem
             // 
             this.gruposEntidadesToolStripMenuItem.Name = "gruposEntidadesToolStripMenuItem";
-            this.gruposEntidadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gruposEntidadesToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.gruposEntidadesToolStripMenuItem.Text = "Grupos entidades";
             // 
             // tiposEntidadesToolStripMenuItem
             // 
             this.tiposEntidadesToolStripMenuItem.Name = "tiposEntidadesToolStripMenuItem";
-            this.tiposEntidadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tiposEntidadesToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.tiposEntidadesToolStripMenuItem.Text = "Tipos entidades";
             // 
             // sistemaToolStripMenuItem
@@ -147,7 +147,7 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "DashboardScreen";
-            this.Text = "MDIParent1";
+            this.Text = "Panel de control";
             this.Load += new System.EventHandler(this.DashboardScreen_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();

@@ -1,4 +1,4 @@
-﻿namespace Capa_de_presentacion
+﻿namespace Capa_de_presentacion.EntidadFormScreens
 {
     partial class FormEntidad
     {
@@ -65,6 +65,7 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "Agregar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
             // 

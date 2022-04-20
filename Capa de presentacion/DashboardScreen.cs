@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Capa_de_presentacion.EntidadFormScreens;
+
 namespace Capa_de_presentacion
 {
     public partial class DashboardScreen : Form

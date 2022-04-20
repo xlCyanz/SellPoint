@@ -31,7 +31,7 @@ namespace Capa_de_presentacion
             tmr.Stop();
             LoginScreen login = new LoginScreen();
             login.Show();
-            this.Close();
+            this.Hide();
         }
     }
 }
