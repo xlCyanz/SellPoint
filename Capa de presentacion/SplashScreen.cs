@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Capa_de_presentacion
@@ -29,9 +22,10 @@ namespace Capa_de_presentacion
         void tmr_Tick(object sender, EventArgs e)
         {
             tmr.Stop();
-            LoginScreen login = new LoginScreen();
-            login.Show();
+            LoginScreen screen = new LoginScreen();
             this.Hide();
+            screen.ShowDialog();
+            this.Close();
         }
     }
 }

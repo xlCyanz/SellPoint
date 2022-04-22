@@ -17,39 +17,47 @@ namespace Capa_de_negocio
             return tabla;
         }
 
+        public void Login(string username, string password)
+        {
+
+        }
+
         public void Agregar(string descripcion, string direccion, string localidad, string numeroDocumento, string telefono, int idGrupoEntidad, int idTipoEntidad, string userName, string password, string comentario, DateTime fecha, string status = "Activa", string rol = "User", int limiteCredito = 0, string tipoEntidad = "Juridica", string tipoDocumento = "RNC", bool eliminable = false, string urlWeb = "", string urlFacebook = "", string urlInstagram = "", string urlTwitter = "", string urlTiktok = "")
         {
-            Entidad newEntidad = new Entidad();
-
-            newEntidad.Descripcion = descripcion;
-            newEntidad.Direccion = direccion;
-            newEntidad.Localidad = localidad;
-            newEntidad.TipoEntidad = tipoEntidad;
-            newEntidad.TipoDocumento = tipoDocumento;
-            newEntidad.NumeroDocumento = numeroDocumento;
-            newEntidad.Telefonos = telefono;
-            newEntidad.URLPaginaWeb = urlWeb;
-            newEntidad.URLFacebook = urlFacebook;
-            newEntidad.URLInstagram = urlInstagram;
-            newEntidad.URLTikTok = urlTiktok;
-            newEntidad.URLTwitter = urlTwitter;
-            newEntidad.IdGrupoEntidad = idGrupoEntidad;
-            newEntidad.IdTipoEntidad = idTipoEntidad;
-            newEntidad.LimiteCredito = limiteCredito;
-            newEntidad.UserNameEntidad = userName;
-            newEntidad.PasswordEntidad = password;
-            newEntidad.RolUserEntidad = rol;
-            newEntidad.Comentario = comentario;
-            newEntidad.Status = status;
-            newEntidad.NoEliminable = eliminable;
-            newEntidad.FechaRegistro = fecha;
+            Entidad newEntidad = new Entidad
+            {
+                Descripcion = descripcion,
+                Direccion = direccion,
+                Localidad = localidad,
+                TipoEntidad = tipoEntidad,
+                TipoDocumento = tipoDocumento,
+                NumeroDocumento = numeroDocumento,
+                Telefonos = telefono,
+                URLPaginaWeb = urlWeb,
+                URLFacebook = urlFacebook,
+                URLInstagram = urlInstagram,
+                URLTikTok = urlTiktok,
+                URLTwitter = urlTwitter,
+                IdGrupoEntidad = idGrupoEntidad,
+                IdTipoEntidad = idTipoEntidad,
+                LimiteCredito = limiteCredito,
+                UserNameEntidad = userName,
+                PasswordEntidad = password,
+                RolUserEntidad = rol,
+                Comentario = comentario,
+                Status = status,
+                NoEliminable = eliminable,
+                FechaRegistro = fecha
+            };
 
             repositorio.Agregar(newEntidad);
         }
+
         public void Actualizar(Entidad entidad)
         {
             repositorio.Actualizar(entidad);
         }
+
         public void Eliminar(string id)
         {
             repositorio.Eliminar(Convert.ToInt32(id));

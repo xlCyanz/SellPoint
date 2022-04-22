@@ -16,7 +16,7 @@ namespace Capa_de_presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SplashScreen());
+            Application.Run(new DashboardScreen());
         }
     }
 }

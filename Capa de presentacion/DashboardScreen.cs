@@ -26,9 +26,20 @@ namespace Capa_de_presentacion
 
         private void entidadesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormEntidad formEntidad = new FormEntidad();
-            formEntidad.Show();
+            FormEntidad screen = new FormEntidad();
             this.Hide();
+            screen.ShowDialog();
+            this.Close();
+        }
+
+        private void gruposEntidadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tiposEntidadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

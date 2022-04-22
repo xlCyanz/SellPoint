@@ -2,6 +2,8 @@
 using System.Data;
 using System.Data.SqlClient;
 
+using Capa_de_acceso_a_datos.modelos;
+
 namespace Capa_de_acceso_a_datos
 {
     public class RepositorioEntidades
@@ -24,7 +26,12 @@ namespace Capa_de_acceso_a_datos
             return tabla;
         }
 
-        public void Agregar(modelos.Entidad entidad)
+        public void Login(Entidad entidad)
+        {
+
+        }
+
+        public void Agregar(Entidad entidad)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "SpEntidadesInsertar";
@@ -61,7 +68,7 @@ namespace Capa_de_acceso_a_datos
             conexion.CerrarConexion();
         }
 
-        public void Actualizar(modelos.Entidad entidad)
+        public void Actualizar(Entidad entidad)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "SpEntidadesActualizar";

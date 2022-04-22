@@ -17,60 +17,78 @@ namespace Capa_de_presentacion.EntidadFormScreens
         public AddEntity()
         {
             InitializeComponent();
+
+            //comboBox1.SelectedIndex = 0;
+            //comboBox2.SelectedIndex = 0;
+            comboBox3.SelectedIndex = 1;
+            comboBox4.SelectedIndex = 0;
+            comboBox5.SelectedIndex = 2;
+            comboBox6.SelectedIndex = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             string userName = textBox1.Text;
-            Console.Write(userName);
+            Console.WriteLine(userName);
 
             string password = textBox2.Text;
-            Console.Write(password);
+            Console.WriteLine(password);
 
             string descripcion = textBox3.Text;
-            Console.Write(descripcion);
+            Console.WriteLine(descripcion);
 
-            string rol = textBox4.Text;
-            Console.Write(rol);
+            string rol = comboBox5.Text;
+            Console.WriteLine(rol);
 
-            string tipoDocumento = textBox5.Text;
-            Console.Write(tipoDocumento);
+            string tipoDocumento = comboBox4.Text;
+            Console.WriteLine(tipoDocumento);
 
-            string tipoEntidad = textBox6.Text;
-            Console.Write(tipoEntidad);
+            string tipoEntidad = comboBox3.Text;
+            Console.WriteLine(tipoEntidad);
 
             string localidad = textBox7.Text;
-            Console.Write(localidad);
+            Console.WriteLine(localidad);
 
             string direccion = textBox8.Text;
-            Console.Write(direccion);
+            Console.WriteLine(direccion);
 
             string telefono = textBox9.Text;
-            Console.Write(telefono);
+            Console.WriteLine(telefono);
 
             string comentario = textBox12.Text;
-            Console.Write(comentario);
+            Console.WriteLine(comentario);
 
             string tiktokUrl = textBox14.Text;
-            Console.Write(tiktokUrl);
+            Console.WriteLine(tiktokUrl);
 
             string twitterUrl = textBox15.Text;
-            Console.Write(twitterUrl);
+            Console.WriteLine(twitterUrl);
 
             string instagramUrl = textBox16.Text;
-            Console.Write(instagramUrl);
+            Console.WriteLine(instagramUrl);
 
             string facebookUrl = textBox17.Text;
-            Console.Write(facebookUrl);
+            Console.WriteLine(facebookUrl);
 
             string paginaWebUrl = textBox18.Text;
-            Console.Write(paginaWebUrl);
+            Console.WriteLine(paginaWebUrl);
+
+            string relacionIdGrupoEntidad = comboBox1.Text;
+            Console.WriteLine(relacionIdGrupoEntidad);
+
+            string relacionIdTipoEntidad = comboBox2.Text;
+            Console.WriteLine(relacionIdTipoEntidad);
         }
 
         private void AddEntity_Load(object sender, EventArgs e)
         {
            ServicioEntidad servicioEntidad = new ServicioEntidad();
             
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
 
         }
     }

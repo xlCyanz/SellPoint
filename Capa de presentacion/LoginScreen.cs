@@ -24,9 +24,6 @@ namespace Capa_de_presentacion
             string usernmame = textBox1.Text;
             string password = textBox2.Text;
 
-            DashboardScreen screen = new DashboardScreen();
-            screen.Show();
-            this.Hide();
         }
     }
 }

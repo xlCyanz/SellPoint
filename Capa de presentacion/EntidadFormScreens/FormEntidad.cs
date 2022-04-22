@@ -39,6 +39,7 @@ namespace Capa_de_presentacion.EntidadFormScreens
             string value = dataGridView1[e.ColumnIndex, e.RowIndex].Value.ToString();
             string column = dataGridView1.Columns[e.ColumnIndex].Name;
             int idEntidad = Convert.ToInt32(dataGridView1[0, e.RowIndex].Value);
+
             Console.WriteLine(value);
             Console.WriteLine(column);
             Console.WriteLine(idEntidad);
@@ -55,16 +56,16 @@ namespace Capa_de_presentacion.EntidadFormScreens
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            DashboardScreen dashboard = new DashboardScreen();
-            dashboard.Show();
+            DashboardScreen screen = new DashboardScreen();
             this.Hide();
+            screen.ShowDialog();
+            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            AddEntity addEntity = new AddEntity();
-            addEntity.Show();
-            this.Hide();
+            AddEntity screen = new AddEntity();
+            screen.ShowDialog();
         }
     }
 }
