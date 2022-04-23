@@ -1,11 +1,14 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
+using System.Configuration;
 using System.Data.SqlClient;
 
 namespace Capa_de_acceso_a_datos
 {
     public class Conexion
     {
-        private SqlConnection conn = new SqlConnection("Server=CYANZ-2772002\\MSSQLSERVERCUSTO;DataBase=sellpoint;Integrated Security=true");
+        readonly private SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["MyDBConnectionString"].ConnectionString);
+        
         public SqlConnection AbrirConexion()
         {
             if (conn.State == ConnectionState.Closed)

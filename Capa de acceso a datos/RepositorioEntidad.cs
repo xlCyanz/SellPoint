@@ -27,9 +27,24 @@ namespace Capa_de_acceso_a_datos
             return tabla;
         }
 
-        public void Login(Entidad entidad)
+        public DataTable Login(Entidad entidad)
         {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "SpEntidadesLogin";
+            comando.CommandType = CommandType.StoredProcedure;
 
+            comando.Connection = conexion.AbrirConexion();
+
+            comando.Parameters.AddWithValue("@UserNameEntidad", entidad.UserNameEntidad);
+            comando.Parameters.AddWithValue("@PasswordEntidad", entidad.PasswordEntidad);
+
+            DataTable dt = new DataTable();
+            dt.Load(comando.ExecuteReader());
+
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+
+            return dt;
         }
 
         public void Agregar(Entidad entidad)

@@ -3,6 +3,7 @@ using System.Data;
 
 using Capa_de_acceso_a_datos;
 using Capa_de_acceso_a_datos.modelos;
+using CryptoLib;
 
 namespace Capa_de_negocio
 {
@@ -12,13 +13,31 @@ namespace Capa_de_negocio
 
         public DataTable Mostrar()
         {
-            DataTable tabla = new DataTable();
-            tabla = repositorio.Mostrar();
-            return tabla;
+            return repositorio.Mostrar();
         }
 
-        public void Login(string username, string password)
+        public bool Login(string username, string password)
         {
+            Entidad entidad = new Entidad
+            {
+                UserNameEntidad = username,
+                PasswordEntidad = Encryptor.MD5Hash(password)
+            };
+
+            try
+            {
+                DataTable logged = repositorio.Login(entidad);
+                if(logged.Rows[0][0].ToString() == "1")
+                {
+                    return true;
+                } else
+                {
+                    return false;
+                }
+            } catch
+            {
+                return false;
+            }
 
         }
 
@@ -42,7 +61,7 @@ namespace Capa_de_negocio
                 IdTipoEntidad = idTipoEntidad,
                 LimiteCredito = limiteCredito,
                 UserNameEntidad = userName,
-                PasswordEntidad = password,
+                PasswordEntidad = Encryptor.MD5Hash(password),
                 RolUserEntidad = rol,
                 Comentario = comentario,
                 Status = status,

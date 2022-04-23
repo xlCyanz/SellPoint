@@ -53,5 +53,13 @@ namespace Capa_de_presentacion
         {
             this.Close();
         }
+
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutUs screen = new AboutUs();
+            this.Hide();
+            screen.ShowDialog();
+            this.Close();
+        }
     }
 }

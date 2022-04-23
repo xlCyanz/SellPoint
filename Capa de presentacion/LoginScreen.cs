@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Capa_de_negocio;
@@ -21,9 +14,35 @@ namespace Capa_de_presentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string usernmame = textBox1.Text;
+            string username = textBox1.Text;
             string password = textBox2.Text;
 
+            if(username == "" || password == "")
+            {
+                string box_msg = "Rellena todos los campos necesarios.";
+                string box_title = "Hubo un error";
+
+                MessageBox.Show(box_msg, box_title);
+                return;
+            }
+
+            ServicioEntidad servicio = new ServicioEntidad();
+
+            bool logged = servicio.Login(username, password);
+
+            if(!logged)
+            {
+                string box_msg = "Ha ocurrido un error al intentar verificar los datos, puede deberse a un fallo en la conexion o los datos estan mal, verificalos.";
+                string box_title = "Hubo un error";
+
+                MessageBox.Show(box_msg, box_title);
+                return;
+            }
+
+            DashboardScreen screen = new DashboardScreen();
+            this.Hide();
+            screen.ShowDialog();
+            this.Close();
         }
     }
 }

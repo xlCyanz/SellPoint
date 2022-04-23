@@ -33,7 +33,7 @@ namespace Capa_de_presentacion.GrupoEntidadScreens
 
             if(deleted)
             {
-                MostrarEntidades();
+                dataGridView1.Rows.RemoveAt(dataGridView1.CurrentCell.RowIndex);
             }
              else
             {
