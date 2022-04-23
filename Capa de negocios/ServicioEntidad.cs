@@ -22,7 +22,7 @@ namespace Capa_de_negocio
 
         }
 
-        public void Agregar(string descripcion, string direccion, string localidad, string numeroDocumento, string telefono, int idGrupoEntidad, int idTipoEntidad, string userName, string password, string comentario, DateTime fecha, string status = "Activa", string rol = "User", int limiteCredito = 0, string tipoEntidad = "Juridica", string tipoDocumento = "RNC", bool eliminable = false, string urlWeb = "", string urlFacebook = "", string urlInstagram = "", string urlTwitter = "", string urlTiktok = "")
+        public bool Agregar(string descripcion, string direccion, string localidad, string numeroDocumento, string telefono, string idGrupoEntidad, string idTipoEntidad, string userName, string password, string comentario, string status = "Activa", string rol = "User", int limiteCredito = 0, string tipoEntidad = "Juridica", string tipoDocumento = "RNC", bool eliminable = false, string urlWeb = "", string urlFacebook = "", string urlInstagram = "", string urlTwitter = "", string urlTiktok = "")
         {
             Entidad newEntidad = new Entidad
             {
@@ -47,20 +47,149 @@ namespace Capa_de_negocio
                 Comentario = comentario,
                 Status = status,
                 NoEliminable = eliminable,
-                FechaRegistro = fecha
             };
 
-            repositorio.Agregar(newEntidad);
+            try
+            {
+                repositorio.Agregar(newEntidad);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
-        public void Actualizar(Entidad entidad)
+        public bool Actualizar(string id, string type, dynamic value)
         {
-            repositorio.Actualizar(entidad);
+            Entidad entidad = new Entidad
+            {
+                IdEntidad = Int32.Parse(id)
+            };
+
+            if (type == "Descripcion")
+            {
+                entidad.Descripcion = value;
+            }
+
+            if (type == "Direccion")
+            {
+                entidad.Direccion = value;
+            }
+
+            if (type == "Localidad")
+            {
+                entidad.Localidad = value;
+            }
+
+            if (type == "TipoEntidad")
+            {
+                entidad.TipoEntidad = value;
+            }
+
+            if (type == "TipoDocumento")
+            {
+                entidad.TipoDocumento = value;
+            }
+
+            if (type == "NumeroDocumento")
+            {
+                entidad.NumeroDocumento = value;
+            }
+
+            if (type == "Telefonos")
+            {
+                entidad.Telefonos = value;
+            }
+
+            if (type == "URLPaginaWeb")
+            {
+                entidad.URLPaginaWeb = value;
+            }
+
+            if (type == "URLFacebook")
+            {
+                entidad.URLFacebook = value;
+            }
+
+            if (type == "URLInstagram")
+            {
+                entidad.URLInstagram = value;
+            }
+
+            if (type == "URLTwitter")
+            {
+                entidad.URLTwitter = value;
+            }
+
+            if (type == "URLTikTok")
+            {
+                entidad.URLTikTok = value;
+            }
+
+            if (type == "IdGrupoEntidad")
+            {
+                entidad.IdGrupoEntidad = value;
+            }
+
+            if (type == "IdTipoEntidad")
+            {
+                entidad.IdTipoEntidad = value;
+            }
+
+            if (type == "LimiteCredito")
+            {
+                entidad.LimiteCredito = Int32.Parse(value);
+            }
+
+            if (type == "UserNameEntidad")
+            {
+                entidad.UserNameEntidad = value;
+            }
+
+            if (type == "PasswordEntidad")
+            {
+                entidad.PasswordEntidad = value;
+            }
+
+            if (type == "RolUserEntidad")
+            {
+                entidad.RolUserEntidad = value;
+            }
+
+            if (type == "Comentario")
+            {
+                entidad.Comentario = value;
+            }
+
+            if (type == "Status")
+            {
+                entidad.Status = value;
+            }
+
+            if (type == "NoEliminable")
+            {
+                entidad.NoEliminable = value;
+            }
+
+            try
+            {
+                repositorio.Actualizar(entidad, type);
+                return true;
+            } catch
+            {
+                return false;
+            }
         }
 
         public void Eliminar(string id)
         {
-            repositorio.Eliminar(Convert.ToInt32(id));
+            Entidad entidad = new Entidad
+            {
+                IdEntidad = Convert.ToInt32(id)
+            };
+
+            repositorio.Eliminar(entidad);
         }
     }
 }

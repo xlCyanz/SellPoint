@@ -2,6 +2,8 @@
 using System.Data;
 using System.Data.SqlClient;
 
+using Capa_de_acceso_a_datos.modelos;
+
 namespace Capa_de_acceso_a_datos
 {
     public class RepositorioGrupoEntidad
@@ -9,7 +11,6 @@ namespace Capa_de_acceso_a_datos
         private Conexion conexion = new Conexion();
 
         SqlDataReader leer;
-        DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
 
         public DataTable Mostrar()
@@ -18,23 +19,25 @@ namespace Capa_de_acceso_a_datos
             comando.CommandText = "SpGruposEntidadesListar";
             comando.CommandType = CommandType.StoredProcedure;
             leer = comando.ExecuteReader();
+
+            DataTable tabla = new DataTable();
             tabla.Load(leer);
             conexion.CerrarConexion();
 
             return tabla;
         }
 
-        public void Agregar(modelos.GrupoEntidad entidad)
+        public void Agregar(GrupoEntidad entidad)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "SpGruposEntidadesInsertar";
             comando.CommandType = CommandType.StoredProcedure;
 
-            comando.Parameters.AddWithValue("@descripcion", entidad.Descripcion);
-            comando.Parameters.AddWithValue("@comentario", entidad.Comentario);
-            comando.Parameters.AddWithValue("@status", entidad.Status);
-            comando.Parameters.AddWithValue("@noEliminable", entidad.NoEliminable);
-            comando.Parameters.AddWithValue("@fechaRegistro", entidad.FechaRegistro);
+            comando.Parameters.AddWithValue("@Descripcion", entidad.Descripcion);
+            comando.Parameters.AddWithValue("@Comentario", entidad.Comentario);
+            comando.Parameters.AddWithValue("@Status", entidad.Status);
+            comando.Parameters.AddWithValue("@NoEliminable", entidad.NoEliminable);
+            comando.Parameters.AddWithValue("@FechaRegistro", entidad.FechaRegistro);
 
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
@@ -42,30 +45,48 @@ namespace Capa_de_acceso_a_datos
             conexion.CerrarConexion();
         }
 
-        public void Actualizar(modelos.GrupoEntidad entidad)
+        public void Actualizar(GrupoEntidad entidad, string type)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "SpGruposEntidadesActualizar";
-            comando.CommandType = CommandType.StoredProcedure;
 
-            comando.Parameters.AddWithValue("@descripcion", entidad.Descripcion);
-            comando.Parameters.AddWithValue("@comentario", entidad.Comentario);
-            comando.Parameters.AddWithValue("@status", entidad.Status);
-            comando.Parameters.AddWithValue("@noEliminable", entidad.NoEliminable);
-            comando.Parameters.AddWithValue("@fechaRegistro", entidad.FechaRegistro);
+            if(type == "Descripcion")
+            {
+                comando.CommandText = "UPDATE GruposEntidades SET Descripcion = @Descripcion WHERE IdGrupoEntidad = @IdGrupoEntidad";
+                comando.Parameters.AddWithValue("@Descripcion", entidad.Descripcion);
+            }
+
+            if (type == "Comentario")
+            {
+                comando.CommandText = "UPDATE GruposEntidades SET Comentario = @Comentario WHERE IdGrupoEntidad = @IdGrupoEntidad";
+                comando.Parameters.AddWithValue("@Comentario", entidad.Comentario);
+            }
+
+            if (type == "Status")
+            {
+                comando.CommandText = "UPDATE GruposEntidades SET Status = @Status WHERE IdGrupoEntidad = @IdGrupoEntidad";
+                comando.Parameters.AddWithValue("@Status", entidad.Status);
+            }
+
+            if (type == "NoEliminable")
+            {
+                comando.CommandText = "UPDATE GruposEntidades SET NoEliminable = @NoEliminable WHERE IdGrupoEntidad = @IdGrupoEntidad";
+                comando.Parameters.AddWithValue("@NoEliminable", entidad.NoEliminable);
+            }
+
+            comando.Parameters.AddWithValue("@IdGrupoEntidad", entidad.IdGrupoEntidad);
 
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             conexion.CerrarConexion();
         }
 
-        public void Eliminar(int id)
+        public void Eliminar(GrupoEntidad entidad)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "SpGruposEntidadesEliminar";
             comando.CommandType = CommandType.StoredProcedure;
 
-            comando.Parameters.AddWithValue("@idGrupoEntidad", id);
+            comando.Parameters.AddWithValue("@IdGrupoEntidad", entidad.IdGrupoEntidad);
 
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();

@@ -38,11 +38,22 @@ namespace Capa_de_presentacion.EntidadFormScreens
         {
             string value = dataGridView1[e.ColumnIndex, e.RowIndex].Value.ToString();
             string column = dataGridView1.Columns[e.ColumnIndex].Name;
-            int idEntidad = Convert.ToInt32(dataGridView1[0, e.RowIndex].Value);
+            string idEntidad = Convert.ToString(dataGridView1[0, e.RowIndex].Value);
 
-            Console.WriteLine(value);
-            Console.WriteLine(column);
-            Console.WriteLine(idEntidad);
+            ServicioEntidad servicio = new ServicioEntidad();
+
+            bool updated = servicio.Actualizar(idEntidad, column, value);
+
+            if(!updated)
+            {
+                string box_msg = "No se puedo editar este campo, verifica que exista el registro o este campo sea editable.";
+                string box_title = "Hubo un error";
+
+                MessageBox.Show(box_msg, box_title);
+                return;
+            }
+
+            MostrarEntidades();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -54,18 +65,20 @@ namespace Capa_de_presentacion.EntidadFormScreens
             dataGridView1.Rows.RemoveAt(dataGridView1.CurrentCell.RowIndex);
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            DashboardScreen screen = new DashboardScreen();
-            this.Hide();
+            AddEntidad screen = new AddEntidad();
             screen.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-            AddEntity screen = new AddEntity();
-            screen.ShowDialog();
+            MostrarEntidades();
         }
     }
 }

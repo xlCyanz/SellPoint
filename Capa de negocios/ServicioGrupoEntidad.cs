@@ -8,34 +8,92 @@ namespace Capa_de_negocio
 {
     public class ServicioGrupoEntidad
     {
-        private readonly RepositorioGrupoEntidad repositorio = new RepositorioGrupoEntidad();
+        private readonly RepositorioGrupoEntidad repositorioGrupoEntidad = new RepositorioGrupoEntidad();
 
         public DataTable Mostrar()
         {
-            DataTable tabla = new DataTable();
-            tabla = repositorio.Mostrar();
-            return tabla;
+            return repositorioGrupoEntidad.Mostrar();
         }
 
-        public void Agregar(string descripcion, string comentario, DateTime fecha, string status = "Activa", bool eliminable = false)
+        public bool Agregar(string descripcion, string comentario, string status = "Activa", bool eliminable = false)
         {
-            GrupoEntidad newEntidad = new GrupoEntidad();
+            GrupoEntidad newGrupoEntidad = new GrupoEntidad
+            {
+                Descripcion = descripcion,
+                Comentario = comentario,
+                Status = status,
+                NoEliminable = eliminable,
+            };
 
-            newEntidad.Descripcion = descripcion;
-            newEntidad.Comentario = comentario;
-            newEntidad.Status = status;
-            newEntidad.NoEliminable = eliminable;
-            newEntidad.FechaRegistro = fecha;
+            try
+            {
+                repositorioGrupoEntidad.Agregar(newGrupoEntidad);
+                return true;
+            }
+             catch
+            {
+                return false;
+            }
+        }
+        public bool Actualizar(string id, string type, dynamic value)
+        {
+            GrupoEntidad grupoEntidad = new GrupoEntidad
+            {
+                IdGrupoEntidad = Int32.Parse(id)
+            };
 
-            repositorio.Agregar(newEntidad);
+            if(type == "Descripcion")
+            {
+                grupoEntidad.Descripcion = value;
+            }
+
+            if (type == "Comentario")
+            {
+                grupoEntidad.Comentario = value;
+            }
+
+            if (type == "Status")
+            {
+                grupoEntidad.Status = value;
+            }
+
+            if (type == "NoEliminable")
+            {
+                if(value == "True")
+                {
+                    grupoEntidad.NoEliminable = true;
+                }
+                else {
+                    grupoEntidad.NoEliminable = false;
+                }
+            }
+
+            try
+            {
+                repositorioGrupoEntidad.Actualizar(grupoEntidad, type);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
-        public void Actualizar(GrupoEntidad entidad)
+        public bool Eliminar(string id)
         {
-            repositorio.Actualizar(entidad);
-        }
-        public void Eliminar(string id)
-        {
-            repositorio.Eliminar(Convert.ToInt32(id));
+            GrupoEntidad grupoEntidad = new GrupoEntidad
+            {
+                IdGrupoEntidad = Int32.Parse(id),
+            };
+
+            try
+            {
+                repositorioGrupoEntidad.Eliminar(grupoEntidad);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

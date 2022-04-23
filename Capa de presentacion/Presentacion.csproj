@@ -46,17 +46,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EntidadFormScreens\AddEntity.cs">
+    <Compile Include="EntidadFormScreens\AddEntidad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EntidadFormScreens\AddEntity.Designer.cs">
-      <DependentUpon>AddEntity.cs</DependentUpon>
+    <Compile Include="EntidadFormScreens\AddEntidad.Designer.cs">
+      <DependentUpon>AddEntidad.cs</DependentUpon>
     </Compile>
     <Compile Include="EntidadFormScreens\FormEntidad.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EntidadFormScreens\FormEntidad.Designer.cs">
       <DependentUpon>FormEntidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GrupoEntidadScreens\AddGrupoEntidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GrupoEntidadScreens\AddGrupoEntidad.Designer.cs">
+      <DependentUpon>AddGrupoEntidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GrupoEntidadScreens\FormGrupoEntidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GrupoEntidadScreens\FormGrupoEntidad.Designer.cs">
+      <DependentUpon>FormGrupoEntidad.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginScreen.cs">
       <SubType>Form</SubType>
@@ -78,11 +90,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="EntidadFormScreens\AddEntity.resx">
-      <DependentUpon>AddEntity.cs</DependentUpon>
+    <Compile Include="TipoEntidadScreens\AddTipoEntidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TipoEntidadScreens\AddTipoEntidad.Designer.cs">
+      <DependentUpon>AddTipoEntidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TipoEntidadScreens\FormTipoEntidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TipoEntidadScreens\FormTipoEntidad.Designer.cs">
+      <DependentUpon>FormTipoEntidad.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="EntidadFormScreens\AddEntidad.resx">
+      <DependentUpon>AddEntidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EntidadFormScreens\FormEntidad.resx">
       <DependentUpon>FormEntidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GrupoEntidadScreens\AddGrupoEntidad.resx">
+      <DependentUpon>AddGrupoEntidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GrupoEntidadScreens\FormGrupoEntidad.resx">
+      <DependentUpon>FormGrupoEntidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>
@@ -101,6 +131,12 @@
     </Compile>
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TipoEntidadScreens\AddTipoEntidad.resx">
+      <DependentUpon>AddTipoEntidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TipoEntidadScreens\FormTipoEntidad.resx">
+      <DependentUpon>FormTipoEntidad.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -121,5 +157,6 @@
       <Name>Negocio</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

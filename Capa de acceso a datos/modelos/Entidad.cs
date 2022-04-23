@@ -17,8 +17,8 @@ namespace Capa_de_acceso_a_datos.modelos
         public string URLInstagram { get; set; }
         public string URLTwitter { get; set; }
         public string URLTikTok { get; set; }
-        public int IdGrupoEntidad { get; set; }
-        public int IdTipoEntidad { get; set; }
+        public string IdGrupoEntidad { get; set; }
+        public string IdTipoEntidad { get; set; }
         public int LimiteCredito { get; set; }
         public string UserNameEntidad { get; set; }
         public string PasswordEntidad { get; set; }

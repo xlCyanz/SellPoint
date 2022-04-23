@@ -2,7 +2,7 @@
 
 namespace Capa_de_acceso_a_datos.modelos
 {
-    class TipoEntidad
+    public class TipoEntidad
     {
         public int IdTipoEntidad { get; set; }
         public string Descripcion { get; set; }
