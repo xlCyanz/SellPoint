@@ -118,9 +118,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(9, 238);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 15);
+            this.label4.Size = new System.Drawing.Size(58, 15);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Telefonos:";
+            this.label4.Text = "Telefono:";
             // 
             // label5
             // 
@@ -128,9 +128,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(9, 347);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(98, 15);
+            this.label5.Size = new System.Drawing.Size(116, 15);
             this.label5.TabIndex = 4;
-            this.label5.Text = "TipoDocumento:";
+            this.label5.Text = "Tipo de documento:";
             // 
             // label6
             // 
@@ -138,9 +138,9 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(9, 312);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 15);
+            this.label6.Size = new System.Drawing.Size(95, 15);
             this.label6.TabIndex = 3;
-            this.label6.Text = "TipoEntidad:";
+            this.label6.Text = "Tipo de entidad:";
             // 
             // label7
             // 
@@ -178,9 +178,9 @@
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(7, 30);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(96, 15);
+            this.label10.Size = new System.Drawing.Size(105, 15);
             this.label10.TabIndex = 11;
-            this.label10.Text = "IdGrupoEntidad:";
+            this.label10.Text = "Grupo de entidad:";
             // 
             // label11
             // 
@@ -208,9 +208,9 @@
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(9, 56);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(64, 15);
+            this.label14.Size = new System.Drawing.Size(73, 15);
             this.label14.TabIndex = 13;
-            this.label14.Text = "Password:";
+            this.label14.Text = "Contraseña:";
             // 
             // label15
             // 
@@ -218,9 +218,9 @@
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(9, 21);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(68, 15);
+            this.label15.Size = new System.Drawing.Size(116, 15);
             this.label15.TabIndex = 12;
-            this.label15.Text = "Username:";
+            this.label15.Text = "Nombre de usuario:";
             // 
             // label13
             // 
@@ -248,9 +248,9 @@
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(10, 163);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(66, 15);
+            this.label17.Size = new System.Drawing.Size(69, 15);
             this.label17.TabIndex = 16;
-            this.label17.Text = "Eliminable";
+            this.label17.Text = "Eliminable:";
             // 
             // textBox12
             // 
@@ -319,7 +319,7 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(110, 28);
+            this.comboBox1.Location = new System.Drawing.Point(120, 29);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(154, 21);
             this.comboBox1.TabIndex = 36;
@@ -329,7 +329,7 @@
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(110, 65);
+            this.comboBox2.Location = new System.Drawing.Point(120, 66);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(154, 21);
             this.comboBox2.TabIndex = 38;
@@ -340,15 +340,15 @@
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(7, 67);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(86, 15);
+            this.label19.Size = new System.Drawing.Size(95, 15);
             this.label19.TabIndex = 37;
-            this.label19.Text = "IdTipoEntidad:";
+            this.label19.Text = "Tipo de entidad:";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(90, 19);
+            this.textBox1.Location = new System.Drawing.Point(128, 19);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(182, 20);
+            this.textBox1.Size = new System.Drawing.Size(144, 20);
             this.textBox1.TabIndex = 17;
             // 
             // textBox2
@@ -421,15 +421,15 @@
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(9, 276);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(119, 15);
+            this.label22.Size = new System.Drawing.Size(137, 15);
             this.label22.TabIndex = 29;
-            this.label22.Text = "NumeroDocumento:";
+            this.label22.Text = "Numero de documento:";
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(134, 275);
+            this.textBox5.Location = new System.Drawing.Point(152, 275);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(138, 20);
+            this.textBox5.Size = new System.Drawing.Size(120, 20);
             this.textBox5.TabIndex = 30;
             // 
             // comboBox5
@@ -453,9 +453,9 @@
             "RNC",
             "Cedula",
             "Pasaporte"});
-            this.comboBox4.Location = new System.Drawing.Point(113, 345);
+            this.comboBox4.Location = new System.Drawing.Point(131, 345);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(159, 21);
+            this.comboBox4.Size = new System.Drawing.Size(142, 21);
             this.comboBox4.TabIndex = 27;
             // 
             // comboBox3
@@ -465,9 +465,9 @@
             this.comboBox3.Items.AddRange(new object[] {
             "Fisica",
             "Juridica"});
-            this.comboBox3.Location = new System.Drawing.Point(90, 312);
+            this.comboBox3.Location = new System.Drawing.Point(113, 310);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(182, 21);
+            this.comboBox3.Size = new System.Drawing.Size(160, 21);
             this.comboBox3.TabIndex = 26;
             // 
             // groupBox2
@@ -508,9 +508,9 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(108, 131);
+            this.textBox4.Location = new System.Drawing.Point(117, 131);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(167, 20);
+            this.textBox4.Size = new System.Drawing.Size(158, 20);
             this.textBox4.TabIndex = 31;
             // 
             // label21
@@ -519,9 +519,9 @@
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(10, 133);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(83, 15);
+            this.label21.Size = new System.Drawing.Size(101, 15);
             this.label21.TabIndex = 41;
-            this.label21.Text = "LimiteCredito:";
+            this.label21.Text = "Limite de credito:";
             // 
             // comboBox6
             // 
@@ -541,9 +541,9 @@
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(10, 99);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(44, 15);
+            this.label20.Size = new System.Drawing.Size(48, 15);
             this.label20.TabIndex = 39;
-            this.label20.Text = "Status:";
+            this.label20.Text = "Estado:";
             // 
             // radioButton1
             // 
@@ -580,7 +580,8 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label18);
             this.Name = "AddEntidad";
-            this.Text = "AddEntity";
+            this.ShowIcon = false;
+            this.Text = "Nueva entidad";
             this.Load += new System.EventHandler(this.AddEntidad_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

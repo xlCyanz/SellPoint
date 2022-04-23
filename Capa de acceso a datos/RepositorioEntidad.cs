@@ -22,6 +22,7 @@ namespace Capa_de_acceso_a_datos
 
             DataTable tabla = new DataTable();
             tabla.Load(leer);
+
             conexion.CerrarConexion();
 
             return tabla;
